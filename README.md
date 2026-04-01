@@ -113,13 +113,12 @@ api-consolidation-plugin/
 │   ├── api-testing.md           # 9-check quality validator
 │   ├── api-consolidation.md     # 4-phase fix planner
 │   └── api-fixer.md             # Code change applier
-├── .claude/
-│   └── commands/
-│       ├── api-report.md            # /api-consolidation:api-report
-│       ├── consolidate-apis.md      # /api-consolidation:consolidate-apis
-│       ├── discover-apis.md         # /api-consolidation:discover-apis
-│       ├── fix-apis.md              # /api-consolidation:fix-apis
-│       └── validate-apis.md         # /api-consolidation:validate-apis
+├── commands/
+│   ├── api-report.md            # /api-consolidation:api-report
+│   ├── consolidate-apis.md      # /api-consolidation:consolidate-apis
+│   ├── discover-apis.md         # /api-consolidation:discover-apis
+│   ├── fix-apis.md              # /api-consolidation:fix-apis
+│   └── validate-apis.md         # /api-consolidation:validate-apis
 ├── hooks/
 │   └── hooks.json               # Auto-firing hook definitions
 ├── settings.json                # Default permissions

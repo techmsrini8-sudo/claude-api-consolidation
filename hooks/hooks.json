@@ -1,0 +1,73 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"if echo \\\"$CLAUDE_TOOL_INPUT\\\" | grep -qE '(Controller|Resource|Endpoint)\\.(java|ts|py|go)'; then echo 'API Consolidation: Modifying an endpoint file. Run /api-consolidation:validate-apis after changes.'; fi\""
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"if echo \\\"$CLAUDE_TOOL_INPUT\\\" | grep -qE '(Controller|Resource|Endpoint|router|route)\\.(java|ts|js|py|go)'; then echo 'API Consolidation: New endpoint file detected. Run /api-consolidation:discover-apis to update inventory.'; fi\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git commit*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"if [ -f .claude/docs/api-issues.md ]; then CRITICAL=$(grep -ci 'critical' .claude/docs/api-issues.md 2>/dev/null || echo 0); if [ \\\"$CRITICAL\\\" -gt 0 ]; then echo \\\"API Consolidation: $CRITICAL critical API issues remain. Run /api-consolidation:fix-apis before committing.\\\"; fi; fi\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"if echo \\\"$CLAUDE_TOOL_INPUT\\\" | grep -qE '(Controller|Resource|Endpoint|router|route)\\.(java|ts|js|py|go)'; then echo 'API Consolidation: Endpoint file modified. API inventory may be stale.'; fi\""
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"if echo \\\"$CLAUDE_TOOL_INPUT\\\" | grep -qE 'api-(inventory|issues|consolidation)'; then echo 'API Consolidation: Report updated.'; fi\""
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"echo 'API Consolidation: Agent completed. Check .claude/docs/ for reports.'\""
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c \"echo 'API Consolidation Plugin active. Commands: /api-consolidation:discover-apis, /api-consolidation:validate-apis, /api-consolidation:consolidate-apis, /api-consolidation:fix-apis, /api-consolidation:api-report'\""
+          }
+        ]
+      }
+    ]
+  }
+}

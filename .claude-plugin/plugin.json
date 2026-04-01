@@ -1,0 +1,26 @@
+{
+  "name": "api-consolidation",
+  "description": "Automated REST API discovery, validation, and consolidation plugin. Scans any backend codebase (Spring Boot, Express, FastAPI, Django, Go), finds all endpoints, runs 9 quality checks, produces phased fix plans, and applies code changes.",
+  "version": "1.0.0",
+  "author": {
+    "name": "techmsrini8-sudo",
+    "email": "techmsrini8@gmail.com",
+    "url": "https://github.com/techmsrini8-sudo"
+  },
+  "homepage": "https://github.com/techmsrini8-sudo/api-consolidation-plugin",
+  "repository": "https://github.com/techmsrini8-sudo/api-consolidation-plugin",
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "rest",
+    "consolidation",
+    "validation",
+    "discovery",
+    "spring-boot",
+    "express",
+    "fastapi",
+    "django",
+    "refactoring",
+    "code-quality"
+  ]
+}

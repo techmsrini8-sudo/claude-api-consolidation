@@ -1,0 +1,20 @@
+{
+  "name": "api-consolidation-marketplace",
+  "owner": {
+    "name": "techmsrini8-sudo",
+    "email": "techmsrini8@gmail.com",
+    "url": "https://github.com/techmsrini8-sudo"
+  },
+  "description": "Marketplace for the API Consolidation Plugin — automated REST API discovery, validation, and refactoring for any backend framework.",
+  "plugins": [
+    {
+      "name": "api-consolidation",
+      "source": {
+        "source": "github",
+        "repo": "techmsrini8-sudo/api-consolidation-plugin"
+      },
+      "description": "Automated REST API discovery, validation, and consolidation. Supports Spring Boot, Express, FastAPI, Django, and Go.",
+      "version": "1.0.0"
+    }
+  ]
+}

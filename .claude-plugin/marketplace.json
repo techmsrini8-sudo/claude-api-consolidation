@@ -11,7 +11,7 @@
       "name": "api-consolidation",
       "source": {
         "source": "github",
-        "repo": "techmsrini8-sudo/api-consolidation-plugin"
+        "repo": "techmsrini8-sudo/claude-api-consolidation"
       },
       "description": "Automated REST API discovery, validation, and consolidation. Supports Spring Boot, Express, FastAPI, Django, and Go.",
       "version": "1.0.0"

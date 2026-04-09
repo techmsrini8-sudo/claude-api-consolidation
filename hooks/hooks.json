@@ -44,7 +44,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c \"if echo \\\"$CLAUDE_TOOL_INPUT\\\" | grep -qE 'api-(inventory|issues|consolidation)'; then echo 'API Consolidation: Report updated.'; fi\""
+            "command": "bash -c \"if echo \\\"$CLAUDE_TOOL_INPUT\\\" | grep -qE 'api-(inventory|issues|consolidation)|consolidation-plan'; then echo 'API Consolidation: Report updated.'; fi\""
           }
         ]
       },

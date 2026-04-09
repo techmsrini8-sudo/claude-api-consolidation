@@ -4,7 +4,12 @@
       "Read(**)",
       "Glob(**)",
       "Grep(**)",
-      "Write(.claude/docs/*)"
+      "Write(.claude/docs/*)",
+      "Edit(src/**/*.java)",
+      "Agent(api-discovery)",
+      "Agent(api-testing)",
+      "Agent(api-consolidation)",
+      "Agent(api-fixer)"
     ],
     "deny": [
       "Bash(rm -rf *)",

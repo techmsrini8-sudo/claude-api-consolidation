@@ -120,10 +120,10 @@ Write results to `.claude/docs/api-issues.md` using this format:
 
 | Severity | Count | Description |
 |----------|-------|-------------|
-| Critical | X | Security risks, path conflicts, missing auth |
-| High | X | Wrong status codes, missing validation |
-| Medium | X | Inconsistencies, layer violations |
-| Low | X | Naming conventions, style issues |
+| 🔴 Critical | X | Security risks, path conflicts, missing auth |
+| 🟠 High | X | Wrong status codes, missing validation |
+| 🟡 Medium | X | Inconsistencies, layer violations |
+| 🟢 Low | X | Naming conventions, style issues |
 | **Total** | **X** | |
 
 ## Findings by Check
